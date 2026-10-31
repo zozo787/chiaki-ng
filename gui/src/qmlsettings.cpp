@@ -928,6 +928,17 @@ void QmlSettings::setCurrentProfile(const QString &profile)
     emit currentProfileChanged();
 }
 
+QString QmlSettings::language() const
+{
+    return settings->GetLanguage();
+}
+
+void QmlSettings::setLanguage(const QString &language)
+{
+    settings->SetLanguage(language);
+    emit languageChanged();
+}
+
 int QmlSettings::placeboUpscaler() const
 {
     return static_cast<int>(settings->GetPlaceboUpscaler());

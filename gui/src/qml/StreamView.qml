@@ -317,7 +317,7 @@ Item {
 
                 Label {
                     Layout.alignment: Qt.AlignRight
-                    text: "Mbps"
+                    text: qsTr("Mbps")
                     font.pixelSize: 18
                     visible: Chiaki.session ? true : false
 
@@ -758,7 +758,7 @@ Item {
                     bottomMargin: 5
 
                 }
-                text: "Mbps"
+                text: qsTr("Mbps")
                 font.pixelSize: 18
                 visible: Chiaki.session
 

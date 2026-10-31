@@ -13,6 +13,7 @@ if(Qt6_VERSION VERSION_GREATER_EQUAL "6.10.0")
 endif()
 
 find_package(Qt6 COMPONENTS WebEngineQuick)
+find_package(Qt6 COMPONENTS LinguistTools)
 find_package(Qt6 COMPONENTS DBus)
 
 if(WIN32)
@@ -152,6 +153,20 @@ set_target_properties(chiaki PROPERTIES
 		MACOSX_BUNDLE_GUI_IDENTIFIER "org.streetpea.chiaking"
 		MACOSX_BUNDLE_ICON_FILE chiaking.icns
 		RESOURCE "${RESOURCE_FILES}")
+
+# UI translations, compiled into the resources as :/i18n/chiaki-ng_<lang>.qm
+# Refresh the .ts files after changing UI strings: cmake --build <build dir> --target update_translations
+if(Qt6LinguistTools_FOUND)
+	# lupdate scans the target's sources, so list the QML files there too
+	file(GLOB_RECURSE CHIAKI_QML_FILES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/qml/*.qml)
+	target_sources(chiaki PRIVATE ${CHIAKI_QML_FILES})
+	qt_add_translations(chiaki
+		TS_FILES translations/chiaki-ng_fr.ts
+		RESOURCE_PREFIX /i18n
+		LUPDATE_OPTIONS -locations none -no-obsolete)
+else()
+	message(WARNING "Qt6 LinguistTools not found, the UI will only be available in English")
+endif()
 
 install(TARGETS chiaki
 		RUNTIME DESTINATION bin

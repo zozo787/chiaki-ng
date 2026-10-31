@@ -433,6 +433,9 @@ class Settings : public QObject
 		QString GetCurrentProfile() const;
 		void SetCurrentProfile(QString profile);
 
+		QString GetLanguage() const;
+		void SetLanguage(const QString &language);
+
 		bool GetKeyboardEnabled() const;
 		void SetKeyboardEnabled(bool enabled);
 

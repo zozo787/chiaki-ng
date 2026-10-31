@@ -71,6 +71,7 @@ class QmlSettings : public QObject
     Q_PROPERTY(QVariantList registeredHosts READ registeredHosts NOTIFY registeredHostsChanged)
     Q_PROPERTY(QStringList profiles READ profiles NOTIFY profilesChanged)
     Q_PROPERTY(QString currentProfile READ currentProfile WRITE setCurrentProfile NOTIFY currentProfileChanged)
+    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
     Q_PROPERTY(QVariantList controllerMapping READ controllerMapping NOTIFY controllerMappingChanged)
     Q_PROPERTY(uint wifiDroppedNotif READ wifiDroppedNotif WRITE setWifiDroppedNotif NOTIFY wifiDroppedNotifChanged)
     Q_PROPERTY(bool portGuessingEnabled READ portGuessingEnabled WRITE setPortGuessingEnabled NOTIFY portGuessingEnabledChanged)
@@ -586,6 +587,9 @@ public:
     QString currentProfile() const;
     void setCurrentProfile(const QString &profile);
 
+    QString language() const;
+    void setLanguage(const QString &language);
+
     void setSettings(Settings *new_settings);
     void refreshAllKeys();
     void refreshAllPlaceboKeys();
@@ -697,6 +701,7 @@ signals:
     void packetLossReportedMaxChanged();
     void iDROnFECFailureEnabledChanged();
     void currentProfileChanged();
+    void languageChanged();
     void profilesChanged();
     void placeboUpscalerChanged();
     void placeboPlaneUpscalerChanged();

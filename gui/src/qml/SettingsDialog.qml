@@ -90,7 +90,7 @@ DialogView {
     function focusCurrentTabFirstItem() {
         let item = null;
         switch (bar.currentIndex) {
-        case 0: item = disconnectAction; break;
+        case 0: item = languageCombo; break;
         case 1: item = hwDecoderCombo; break;
         case 2: item = consoleSelection; break;
         case 3: item = audioOutDevice; break;
@@ -465,13 +465,36 @@ DialogView {
 
                             Label {
                                 Layout.alignment: Qt.AlignRight
+                                text: qsTr("Language:")
+                            }
+
+                        C.ComboBox {
+                            id: languageCombo
+                            Layout.preferredWidth: 400
+                            firstInFocusChain: true
+                            textRole: "name"
+                            valueRole: "code"
+                            model: [
+                                { code: "en", name: "English" },
+                                { code: "fr", name: "Français" }
+                            ]
+                            Component.onCompleted: currentIndex = Math.max(0, indexOfValue(Chiaki.settings.language))
+                            onActivated: index => Chiaki.settings.language = valueAt(index)
+                        }
+
+                        Label {
+                            Layout.alignment: Qt.AlignRight
+                            text: qsTr("(English, applies after restart)")
+                        }
+
+                            Label {
+                                Layout.alignment: Qt.AlignRight
                                 text: qsTr("Action On Disconnect:")
                             }
 
                         C.ComboBox {
                             id: disconnectAction
                             Layout.preferredWidth: 400
-                            firstInFocusChain: true
                             model: [qsTr("Do Nothing"), qsTr("Enter Sleep Mode"), qsTr("Ask")]
                             currentIndex: Chiaki.settings.disconnectAction
                             onActivated: index => Chiaki.settings.disconnectAction = index
@@ -2216,7 +2239,7 @@ DialogView {
 
                         Button {
                             id: resetAllKeys
-                            text: "Reset All Keys"
+                            text: qsTr("Reset All Keys")
                             Layout.alignment: Qt.AlignRight
                             property bool firstInFocusChain: true
                             property bool lastInFocusChain: false
@@ -2550,7 +2573,7 @@ DialogView {
                             Layout.alignment: Qt.AlignHCenter
                             id: controllerMappingChange
                             firstInFocusChain: true
-                            text: "Change Controller Mapping"
+                            text: qsTr("Change Controller Mapping")
                             onClicked: controllerMappingDialog.show({
                                 reset: false
                             });
@@ -2558,7 +2581,7 @@ DialogView {
                         C.Button {
                             Layout.alignment: Qt.AlignHCenter
                             id: controllerMappingReset
-                            text: "Reset Controller Mapping"
+                            text: qsTr("Reset Controller Mapping")
                             onClicked: controllerMappingDialog.show({
                                 reset: true
                             });

@@ -38,6 +38,7 @@ int main(int argc, char *argv[]) { return real_main(argc, argv); }
 #endif
 
 #include <QCommandLineParser>
+#include <QTranslator>
 #include <QMap>
 #include <QSurfaceFormat>
 
@@ -187,6 +188,11 @@ int real_main(int argc, char *argv[])
 	bool use_alt_settings = false;
 	if(!parser.isSet(profile_option))
 		use_alt_settings = true;
+	
+	QTranslator translator;
+	const QString language = settings.GetLanguage();
+	if(language != "en" && translator.load(QStringLiteral(":/i18n/chiaki-ng_%1.qm").arg(language)))
+		app.installTranslator(&translator);
 
 	if(args.length() == 0)
 		return RunMain(app, use_alt_settings ? &alt_settings : &settings, exit_app_on_stream_exit);

@@ -57,6 +57,7 @@ jobs:
             python-pip:p
             qt6-base:p
             qt6-declarative:p
+            qt6-tools:p
             qt6-svg:p
             shaderc:p
             speexdsp:p
