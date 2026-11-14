@@ -695,7 +695,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Soft Clip Knee:</source>
-        <translation>Genou de l&apos;écrêtage doux&#xa0;:</translation>
+        <translation>Seuil de l’écrêtage doux&#xa0;:</translation>
     </message>
     <message>
         <source>(0.70)</source>
@@ -799,7 +799,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Linear Light</source>
-        <translation>Lumière linéaire</translation>
+        <translation>Eclairage linéaire</translation>
     </message>
     <message>
         <source>(Spline)</source>
@@ -807,7 +807,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Knee Adaptation:</source>
-        <translation>Adaptation du genou&#xa0;:</translation>
+        <translation>Adaptation du seuil de compression&#xa0;:</translation>
     </message>
     <message>
         <source>(0.40)</source>
@@ -815,7 +815,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Knee Minimum:</source>
-        <translation>Genou minimum&#xa0;:</translation>
+        <translation>Seuil de compression minimum&#xa0;:</translation>
     </message>
     <message>
         <source>(0.10)</source>
@@ -823,15 +823,15 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Knee Maximum:</source>
-        <translation>Genou maximum&#xa0;:</translation>
+        <translation>Seuil de compression maximum&#xa0;:</translation>
     </message>
     <message>
         <source>Knee Default:</source>
-        <translation>Genou par défaut&#xa0;:</translation>
+        <translation>Seuil de compression par défaut&#xa0;:</translation>
     </message>
     <message>
         <source>Knee Offset:</source>
-        <translation>Décalage du genou&#xa0;:</translation>
+        <translation>Décalage du seuil de compression&#xa0;:</translation>
     </message>
     <message>
         <source>(1.00)</source>
@@ -867,7 +867,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Linear Knee:</source>
-        <translation>Genou linéaire&#xa0;:</translation>
+        <translation>Seuil de compression linéaire&#xa0;:</translation>
     </message>
     <message>
         <source>(0.3)</source>
@@ -1174,11 +1174,11 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Deband Enabled:</source>
-        <translation>Débandage activé&#xa0;:</translation>
+        <translation>Lissage des bandes activé&#xa0;:</translation>
     </message>
     <message>
         <source>Enable Debanding</source>
-        <translation>Activer le débandage</translation>
+        <translation>Activer le lissage des bandes</translation>
     </message>
     <message>
         <source>(Checked)</source>
@@ -1186,7 +1186,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Deband Preset:</source>
-        <translation>Préréglage du débandage&#xa0;:</translation>
+        <translation>Préréglage du lissage des bandes&#xa0;:</translation>
     </message>
     <message>
         <source>(Custom)</source>
@@ -1194,7 +1194,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Deband Iterations:</source>
-        <translation>Itérations du débandage&#xa0;:</translation>
+        <translation>Itérations du lissage des bandes&#xa0;:</translation>
     </message>
     <message>
         <source>%1</source>
@@ -1206,7 +1206,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Deband Threshold:</source>
-        <translation>Seuil du débandage&#xa0;:</translation>
+        <translation>Seuil du lissage des bandes&#xa0;:</translation>
     </message>
     <message>
         <source>(3.0)</source>
@@ -1214,7 +1214,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Deband Radius:</source>
-        <translation>Rayon du débandage&#xa0;:</translation>
+        <translation>Rayon du lissage des bandes&#xa0;:</translation>
     </message>
     <message>
         <source>(16.0)</source>
@@ -1222,7 +1222,7 @@ Cela permet&#xa0;:
     </message>
     <message>
         <source>Deband Grain:</source>
-        <translation>Grain du débandage&#xa0;:</translation>
+        <translation>Grain du lissage des bandes&#xa0;:</translation>
     </message>
     <message>
         <source>(4.0)</source>
